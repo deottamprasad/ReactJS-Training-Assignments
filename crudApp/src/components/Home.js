@@ -27,7 +27,7 @@ const Home = () => {
   }
 
   const handleDelete = (id) => {
-    var index = Employees.map((e) => {
+    const index = Employees.map((e) => {
       return e.id;
     }).indexOf(id);
     dispatch(deleteEmp(index));

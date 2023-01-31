@@ -2,11 +2,7 @@ import { USER } from "../ActionConstants";
 
 //A single reducer changeTheState which defines how to perform actions based on the action type.
 
-const initialState = [{
-  id:"",
-  Name:"",
-  Age:"",
-}];
+const initialState: {id: String, Name: String, Age: String}[] = [];
 
 const employeeReducer = (state = initialState, action) => {
   switch (action.type) {

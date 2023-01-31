@@ -8,15 +8,17 @@ import Employees from "./Employees";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const index = Employees.map((e) => {
+  return e.id;
+}).indexOf(id);
+
 const Edit = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [id, setId] = useState("");
   const history = useNavigate();
-  var index = Employees.map((e) => {
-    return e.id;
-  }).indexOf(id);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(editEmp({index, name, age}));
