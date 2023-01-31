@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
-import changeTheState from "./Crud";
+import employeeReducer from "./Crud";
 
 const rootReducers = combineReducers({
-  changeTheState
+  employeeReducer
 });
 
 export default rootReducers;

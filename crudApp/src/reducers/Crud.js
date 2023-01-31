@@ -1,3 +1,5 @@
+import { USER } from "../ActionConstants";
+
 //A single reducer changeTheState which defines how to perform actions based on the action type.
 
 const initialState = [{
@@ -6,27 +8,29 @@ const initialState = [{
   Age:"",
 }];
 
-const changeTheState = (state = initialState, action) => {
+const employeeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD":
+    case USER.ADD:
+      const {id,name,age} = action.payload;
       return [
         ...state,
         {
-          id: action.payloadId,
-          Name: action.payloadName,
-          Age: action.payloadAge
+          id: id,
+          Name: name,
+          Age: age,
         }
       ];
-    case "EDIT": {
-      [...state][action.payloadIndex].Name = action.payloadName;
-      [...state][action.payloadIndex].Age = action.payloadAge;
+    case USER.EDIT: {
+      const {index,name,age} = action.payload;
+      [...state][index].Name = name;
+      [...state][index].Age = age;
       return state;
     }
-    case "DELETE": {
-      [...state].splice(action.payloadIndex, 1);
+    case USER.DELETE: {
+      [...state].splice(action.payload, 1);
       return state;
     }
-    case "GET": {
+    case USER.GET: {
       return [...state, ...action.payload];
     }
     default:
@@ -34,4 +38,4 @@ const changeTheState = (state = initialState, action) => {
   }
 };
 
-export default changeTheState;
+export default employeeReducer;

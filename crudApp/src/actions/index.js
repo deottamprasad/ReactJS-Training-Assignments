@@ -1,30 +1,28 @@
+import { USER } from "../ActionConstants"
+
 //I have added four actions which is used for defining what actions we can take on performing operations on our Employees state.
 
-const addEmp = (id, name, age) => (
+const addEmp = (obj) => (
   {
-    type: "ADD",
-    payloadId: id,
-    payloadName: name,
-    payloadAge: age
+    type: USER.ADD,
+    payload: obj,
   }
 )
-const editEmp = (index, name, age) => (
+const editEmp = (obj) => (
   {
-    type: "EDIT",
-    payloadIndex: index,
-    payloadName: name,
-    payloadAge: age
+    type: USER.EDIT,
+    payload: obj,
   }
 )
 const deleteEmp = (index) => (
   {
-    type: "DELETE",
-    payloadIndex: index
+    type: USER.DELETE,
+    payload: index
   }
 )
 const getEmp = (employees) => (
   {
-    type: "GET",
+    type: USER.GET,
     payload: employees
   }
 )

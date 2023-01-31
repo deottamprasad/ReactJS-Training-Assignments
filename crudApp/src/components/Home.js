@@ -8,9 +8,9 @@ import { getEmp } from "../actions/index";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Home() {
+const Home = () => {
   const dispatch = useDispatch();
-  const newState = useSelector((state) => state.changeTheState);
+  const newState = useSelector((state) => state.employeeReducer);
   const history = useNavigate();
   let [Employees, setEmployees] = useState([]);
   useEffect(() => {
@@ -22,18 +22,18 @@ function Home() {
       .then(() => console.log(Employees));
   });
 
-  function handleGet() {
+  const handleGet = () => {
     dispatch(getEmp(Employees));
   }
 
-  function handleDelete(id) {
+  const handleDelete = (id) => {
     var index = Employees.map((e) => {
       return e.id;
     }).indexOf(id);
     dispatch(deleteEmp(index));
     history("/");
   }
-  function handleEdit(id, age, name) {
+  const handleEdit = (id, age, name) => {
     localStorage.setItem("Name", name);
     localStorage.setItem("Age", age);
     localStorage.setItem("id", id);

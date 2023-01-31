@@ -13,7 +13,7 @@ import Edit from "./components/Edit";
 
 import "./styles.css";
 
-export default function App() {
+const App = () => {
   return (
     <div className="App">
       <Router>
@@ -26,3 +26,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

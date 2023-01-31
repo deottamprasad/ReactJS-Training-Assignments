@@ -9,18 +9,18 @@ import { addEmp } from "../actions/index.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-function Add() {
+const Add = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const history = useNavigate();
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const ids = uuid();
     let uniqueId = ids.slice(0, 8);
     let a = name,
       b = age;
-    dispatch(addEmp(uniqueId, a, b));
+    dispatch(addEmp({id:uniqueId, name:a, age:b}));
     history("/");
   }
   return (

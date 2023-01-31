@@ -8,18 +8,18 @@ import Employees from "./Employees";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Edit() {
+const Edit = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [id, setId] = useState("");
-  let history = useNavigate();
+  const history = useNavigate();
   var index = Employees.map((e) => {
     return e.id;
   }).indexOf(id);
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(editEmp(index, name, age));
+    dispatch(editEmp({index, name, age}));
     history("/");
   }
   useEffect(() => {
