@@ -1,7 +1,7 @@
 import About from "./components/About";
 import Home from "./components/Home";
-import "./styles.css";
 import { Routes, Route } from "react-router-dom";
+
 import NavBar from "./components/NavBar";
 import OrderSummary from "./components/OrderSummary";
 import NoMatch from "./components/NoMatch";
@@ -11,6 +11,10 @@ import NewProducts from "./components/NewProducts";
 import Users from "./components/Users";
 import Admin from "./components/Admin";
 import UserDetails from "./components/UserDetails";
+
+import Paths from "./routes";
+
+import "./styles.css";
 
 //Here I have added all the route paths and the component which is going to be rendered on that path.
 //I have also added a dynamic route (":userid") and nested routes like featured and new inside Products route.
@@ -22,17 +26,17 @@ export default function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="order-summary" element={<OrderSummary />} />
-        <Route path="products" element={<Products />}>
+        <Route path={Paths.ROOT} element={<Home />} />
+        <Route path={Paths.ABOUT} element={<About />} />
+        <Route path={Paths.ORDER_SUMMARY} element={<OrderSummary />} />
+        <Route path={Paths.PRODUCTS} element={<Products />}>
           <Route index element={<FeaturedProducts />} />
-          <Route path="featured" element={<FeaturedProducts />} />
-          <Route path="new" element={<NewProducts />} />
+          <Route path={Paths.FEATURED} element={<FeaturedProducts />} />
+          <Route path={Paths.NEW} element={<NewProducts />} />
         </Route>
-        <Route path="users" element={<Users />}>
-          <Route path=":userid" element={<UserDetails />} />
-          <Route path="admin" element={<Admin />} />
+        <Route path={Paths.USERS} element={<Users />}>
+          <Route path={Paths.USERID} element={<UserDetails />} />
+          <Route path={Paths.ADMIN} element={<Admin />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>

@@ -1,8 +1,6 @@
 function NewProducts() {
   return (
-    <>
-      <div>List of New Products</div>
-    </>
+    <div>List of New Products</div>
   );
 }
 export default NewProducts;

@@ -1,4 +1,5 @@
 import Counter from "./Counter";
+
 import "./styles.css";
 
 //Here I have creater a Counter components which I passed as a prop to a Higher order components like HOCRed, HOCGreen, HOCBlue.

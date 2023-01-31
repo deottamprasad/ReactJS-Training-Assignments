@@ -1,8 +1,6 @@
 function NoMatch() {
   return (
-    <>
-      <div>Page Not Found</div>
-    </>
+    <div>Page Not Found</div>
   );
 }
 

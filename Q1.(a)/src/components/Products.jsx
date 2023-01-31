@@ -1,12 +1,14 @@
 import { Link, Outlet } from "react-router-dom";
 
+import Paths from "../routes";
+
 function Products() {
   return (
     <>
       <input type="search" placeholder="Search Products" />
       <nav>
-        <Link to="featured">featured</Link>
-        <Link to="new">new</Link>
+        <Link to={Paths.FEATURED}>featured</Link>
+        <Link to={Paths.NEW}>new</Link>
       </nav>
       <Outlet />
     </>
