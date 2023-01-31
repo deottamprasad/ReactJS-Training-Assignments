@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { deleteEmp } from "../actions/index";
 import { getEmp } from "../actions/index";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
   const dispatch = useDispatch();

@@ -1,6 +1,10 @@
 //A single reducer changeTheState which defines how to perform actions based on the action type.
 
-const initialState = [];
+const initialState = [{
+  id:"",
+  Name:"",
+  Age:"",
+}];
 
 const changeTheState = (state = initialState, action) => {
   switch (action.type) {
@@ -14,15 +18,13 @@ const changeTheState = (state = initialState, action) => {
         }
       ];
     case "EDIT": {
-      let newState = [...state];
-      newState[action.payloadIndex].Name = action.payloadName;
-      newState[action.payloadIndex].Age = action.payloadAge;
-      return newState;
+      [...state][action.payloadIndex].Name = action.payloadName;
+      [...state][action.payloadIndex].Age = action.payloadAge;
+      return state;
     }
     case "DELETE": {
-      let newState = [...state];
-      newState.splice(action.payloadIndex, 1);
-      return newState;
+      [...state].splice(action.payloadIndex, 1);
+      return state;
     }
     case "GET": {
       return [...state, ...action.payload];

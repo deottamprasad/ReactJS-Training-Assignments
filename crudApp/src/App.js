@@ -5,11 +5,13 @@
 //https://mocki.io/fake-json-api where I basically stored a list of employees in json form and fetched it
 //when get button gets clicked.
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import Home from "./components/Home";
-import "./styles.css";
 import Add from "./components/Add";
 import Edit from "./components/Edit";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import "./styles.css";
 
 export default function App() {
   return (

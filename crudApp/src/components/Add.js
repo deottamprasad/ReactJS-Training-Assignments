@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-import { addEmp } from "../actions/index.js";
 import { useDispatch } from "react-redux";
+
+import { addEmp } from "../actions/index.js";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function Add() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
-  let history = useNavigate();
+  const history = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
     const ids = uuid();

@@ -1,9 +1,9 @@
-import changeTheState from "./Crud";
-
 import { combineReducers } from "redux";
 
-const reducers = combineReducers({
+import changeTheState from "./Crud";
+
+const rootReducers = combineReducers({
   changeTheState
 });
 
-export default reducers;
+export default rootReducers;
